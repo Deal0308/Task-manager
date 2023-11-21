@@ -27,7 +27,7 @@ def update_task(task_id, summary, description, is_done):
     # Send a PUT request to update the task
     response = requests.put(update_url, json=updated_task)
 
-    if response.status_code == 200:
+    if response.status_code == 204:
         print("Task updated successfully.")
     else:
         print(f"Failed to update task. Status Code: {response.status_code}")

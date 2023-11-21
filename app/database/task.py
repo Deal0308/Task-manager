@@ -55,7 +55,7 @@ def update_by_id(task_data, task_id):
     )
 
     statement = """
-        UPDATE task
+        UPDATE task SET
         summary = ?,
         description = ?,
         is_done = ?
@@ -68,5 +68,5 @@ def delete_by_id(task_id):
     conn = get_db()
     conn.execute("DELETE FROM task WHERE id=?", (task_id,))
     conn.commit()
-    
+
             
